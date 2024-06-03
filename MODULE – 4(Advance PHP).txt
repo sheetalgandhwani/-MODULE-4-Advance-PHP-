@@ -1,0 +1,388 @@
+                                        MODULE-4(Advance PHP)      
+                                      ==========================
+
+OOPS-->
+
+Q.1) What is Object Oriented Programming?
+    
+ -->  OOP stands for Object-Oriented Programming.
+      
+      OOP in PHP alludes to a programming style having an association of the class, objects, and various components.
+
+PHP is a server-side programming language used for web development. Object-oriented programming in PHP helps developers build reusable and complex web applications. Object-oriented programming is a programming style that refers to the association of various components and revolves around the inheritance, polymorphism, encapsulation, and abstraction concepts.
+
+==============================================================================================================
+
+
+Q.2) What are the Properties of Object Oriented System?
+
+-->  Object-Oriented Programming (OOP) in PHP, like in other languages, revolves around the concept of objects, which are instances of classes. OOP is designed to enable developers to create applications that are modular, reusable, and easier to maintain.
+ 
+        The primary properties of an Object-Oriented System in PHP are:
+
+    1. Class and Object:
+    --------------------
+
+Class:  A blueprint for creating objects. It defines properties (variables) and methods (functions) that the 
+           objects created from the class can use.
+
+Object: An instance of a class. It is created using the new keyword and can access the properties and methods
+         defined in its class.
+
+    2. Encapsulation:
+   -------------------
+                     Encapsulation is the concept of wrapping data (properties) and methods (functions) together as a single unit. It restricts direct access to some of the object’s components, which can prevent the accidental modification of data.
+
+           Access modifiers (public, protected, private) are used to control the visibility of properties and methods.
+
+    3. Inheritance:
+  ----------------
+                     Inheritance allows a class (subclass or derived class) to inherit the properties and methods of another class (superclass or base class). This promotes code reuse. 
+
+
+   4.  Polymorphism:
+   ------------------
+                     Polymorphism allows methods to do different things based on the object it is acting upon.        It can be achieved through method overriding and method overloading (though PHP does not support method   overloading directly).
+
+   5. Abstraction:
+   -----------------
+                    Abstraction allows the creation of complex systems by defining classes that are meant to be inherited by other classes but not instantiated themselves. Abstract classes can have abstract methods that must be implemented by the subclasses.
+
+The abstract keyword is used to define an abstract class and its methods.
+
+==============================================================================================================
+  
+
+Q.3) What is Overloading?
+
+--->  Overloading in Object-Oriented Programming (OOP) refers to the ability to define multiple methods with the same name but different signatures within the same class. A method's signature includes its name and the number and type of its parameters. Overloading allows methods to handle different types or numbers of inputs while providing similar functionality, making code more intuitive and easier to manage.
+
+          Key Points of Overloading:
+
+     Same Method Name: All overloaded methods must share the same name.
+
+     Different Parameters: Each overloaded method must have a different parameter list (different number or
+                            types of parameters).
+            
+     Return Type: Overloaded methods can have different return types, but the return type alone cannot be used 
+                    to distinguish overloaded methods.
+
+==============================================================================================================
+
+Q.4) Define Constructor and Destructor?   
+
+     Constructor:
+      -------------
+                   A constructor is a special member function of a class that is automatically called when an object of that class is created. The purpose of a constructor is to initialize the object's data members and allocate resources if necessary. 
+
+     Destructor:
+    -------------
+                 A destructor is a special member function of a class that is automatically called when an object goes out of scope or is explicitly deleted. The purpose of a destructor is to free resources that the object may have acquired during its lifetime, such as memory, file handles, or network connections.
+
+==============================================================================================================
+
+Q.5)  What Is T_PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with Example?
+
+--->    T_PAAMAYIM_NEKUDOTAYIM is the Hebrew term for the Scope Resolution Operator (::) in PHP. It's often referred to as "double colon" or "PAAMAYIM_NEKUDOTAYIM " in the PHP community. This operator is used to access static methods or properties, constants, and overridden methods or properties of a class.
+
+      Here is an example demonstrating the usage of the Scope Resolution Operator in PHP:
+
+
+       class MyClass {
+    const MY_CONSTANT = 10;
+         public static $staticProperty = 20;
+
+         public static function mystaticMethod()
+         {
+        echo "Hello from static method!\n";
+         }
+     }
+
+
+       echo MyClass::MY_CONSTANT . "\n";
+
+
+      echo MyClass::$staticProperty . "\n";
+
+
+      MyClass::myStaticMethod();
+
+============================================================================================================
+
+Q.6)  What is difference between Class And Interface?
+
+      Classes and interfaces are both fundamental concepts in object-oriented programming, but they serve     
+      different purposes.
+
+      Classes:
+
+        1.Classes are blueprints for objects. They define the properties (attributes) and behaviors (methods) 
+            that objects of that class will have.
+
+        2. They can contain fields, constructors, methods, and other members.
+        3. Classes can be instantiated to create objects.
+        4. They can implement interfaces.
+        5. They support inheritance, allowing one class to inherit the properties and behaviors of another 
+            class.
+        6. They can have access modifiers like public, private, protected, etc., which control the visibility                 
+            and accessibility of their members.
+
+
+    Interfaces:
+
+           1. Interfaces are like contracts. They define a set of methods that a class must implement if it 
+               implements that interface.
+
+           2. They contain method signatures but no method bodies. In other words, interfaces only declare the
+               methods but do not provide the implementation.
+ 
+           3. Interfaces can't contain fields (except constants, which are implicitly public, static, and
+               final).            
+           4. A class can implement multiple interfaces, but it can only inherit from one class.
+
+           5. Interfaces are used to achieve abstraction and provide a way to achieve loose coupling in the 
+               codebase.
+
+           6.They are extensively used to create APIs and ensure that classes adhere to a certain contract 
+              without dictating how they should be implemented internally.
+
+           7.Interfaces  can't be instantiated directly. However, a reference variable of an interface 
+              type can be used to refer to an object of a class that implements the interface.
+
+==============================================================================================================
+
+Q.7)   Are Parent Constructor Called Implicitly When Create An Object Of Class?
+
+ -->    In PHP, when we create an object of a class, the parent constructor is not called implicitly unless we specifically invoke it within the child class constructor. If the child class constructor does not explicitly call the parent constructor using the parent::__construct() method, the parent constructor will not be executed automatically.
+
+==============================================================================================================
+
+Q.8) How to Call Parent Constructor?
+
+-->    In PHP, we can call a parent class constructor using the parent::__construct() syntax. This is   
+       typically used within the constructor of a subclass to invoke the constructor of its parent class.
+
+==============================================================================================================
+
+Q.9) How to Load Classes in PHP?
+
+-->   In PHP, loading classes typically involves using the require or include functions to include the PHP         
+       files where our classes are defined.
+
+==============================================================================================================
+
+Q.10) What Happen, If Constructor Is Defined As Private Or Protected?
+
+-->   If a constructor is defined as private or protected, it restricts the access to the constructor from 
+       outside the class.
+
+==============================================================================================================
+
+Q.11) What are PHP Magic Methods/Functions? List them Write program for Static Keyword in PHP?
+
+-->
+      PHP magic methods, also known as magic functions, are special methods that are automatically called in response to certain PHP events. These methods enable you to implement functionality in your classes without explicitly calling them.   PHP magic methods are:
+
+       1. __construct(): Automatically called when an object is created.
+       2. __destruct(): Automatically called when an object is destroyed.
+       3. __call(): Automatically called when an inaccessible method is called.
+       4. __callStatic(): Automatically called when an inaccessible static method is called.
+       5. __get(): Automatically called when an inaccessible property is accessed.
+       6. __set(): Automatically called when an inaccessible property is set.
+       7. __isset(): Automatically called when isset() or empty() is called on an inaccessible property.
+       8. __unset(): Automatically called when unset() is called on an inaccessible property.
+       9. __sleep(): Automatically called before serialization of an object.
+       10. __wakeup(): Automatically called after deserialization of an object.
+       11. __toString(): Automatically called when an object is converted to a string.
+       12. __invoke(): Automatically called when an object is treated as a function.
+       13. __set_state(): Automatically called when var_export() is called on an object.
+       14. __clone(): Automatically called when an object is cloned.
+       15.__debugInfo(): Automatically called when var_dump() is called on an object.
+
+       Program for static keyword in PHP:->
+
+      <?php
+
+   class Counter {
+    public static $count = 0;
+
+    public function __construct() {
+        self::$count++;
+    }
+
+    public static function getCount() {
+        return self::$count;
+    }
+} 
+
+        // Creating instances of Counter class
+      $counter1 = new Counter();
+      $counter2 = new Counter();
+      $counter3 = new Counter();
+
+     echo "Count: " . Counter::getCount(); // Output: Count: 3
+?>
+
+==============================================================================================================
+
+Q.12) Use of The $this keyword?
+
+-->   In object-oriented programming languages like PHP, the $this keyword is used within a class to refer to 
+      the current instance of the class. It's typically used to access properties and methods  of the
+     current object. 
+
+==============================================================================================================
+
+Q.13) Create multiple Traits and use it in to a single class?
+
+-->    <?php
+
+   trait Reader{
+      public function add($var1,$var2)
+      {
+         return $var1+$var2;
+      }
+   }
+
+   trait writer {
+      public function multiplication($var1,$var2)
+      {
+         return $var1*$var2;
+      }
+   }
+
+   class File 
+   {
+      use Reader;
+      use writer;
+      public function calculate($var1,$var2){
+         echo "Result of addition:".$this->add($var1,$var2);
+         echo "Result of multiplication:".$this->multiplication($var1,$var2);
+      }
+   }
+   $o = new File();
+   $o->calculate(5,3);
+?> 
+
+Output:->  Result of addition two numbers:8
+           Result of multiplication of two numbers:15 
+==============================================================================================================
+
+Q.14)   Write PHP Script of Object Iteration?
+
+        PHP provides a way for objects to be defined so it is possible to iterate through a list of items,
+        with, for example a foreach statement. By default, all visible properties will be     
+         used for the iteration.
+
+          <?php
+              class myclass
+     {
+                 private $var;
+                 protected $var1;
+                 public $x, $y, $z;
+
+                 public function __construct()
+                {
+                   $this->var="Hello World";
+                   $this->var1=array(1,2,3);
+                   $this->x=100;
+                   $this->y=200;
+                   $this->z=300;
+                 }
+     }
+
+   $obj = new myclass();
+    foreach($obj as $key => $value) {
+      print "$key => $value\n";
+   }
+?>
+
+=========================================================================================================
+
+jQuery-->
+
+  Q.) What is jQuery?
+
+-->  jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document     
+      traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use
+      API that works across a multitude of browsers.
+
+==============================================================================================================
+
+Q.) How are JavaScript and jQuery different?
+      
+     JavaScript is an independent language and can exist on its own. JQuery is a JavaScript library. It would not have been   invented had JavaScript was not there. jQuery is still dependent on JavaScript as it has to be converted to JavaScript for the browser in-built JavaScript engine to interpret and run it.
+
+=============================================================================================================================
+
+Q.)  Which is the starting point of code execution in jQuery?          
+
+      The jQuery starts its code execution from the $(document).ready() function which is executed whenever the whole HTML DOM is loaded and is totally rendered by the browser, so that the event handlers work correctly without any errors. This $(document).ready() function load the script only after the whole DOM is loaded by the browser.
+
+
+   Syntax:
+
+        $(document).ready(function({....}));
+
+    or
+
+        $(function({....}));
+
+=============================================================================================================================
+
+Q.) What is the difference between prop and attr?
+
+ 
+                    prop() method                                               attr() method
+    
+1.  The current value is returned by this method.           1.   The default value is returned by this method.
+                                                        
+2.  When a user wishes to modify the value of an HTML       2. The primary task of this method is to specify the
+   tag's attribute, they typically utilize this method.          attribute's default value for an HTML tag.
+                                                        
+3.  According to the DOM tree, it modifies                  3.  It is used to change the attribute of the HTML tag.
+     the properties for that HTML tag.
+ 
+4. Syntax:                                                  4.  Syntax:
+          
+           $(selector).prop(property)                                     $(selector).attr(attribute)
+
+5. It took three parameters they are Value, property,       5.  It took three parameters they are value , function and 
+    and function.                                                attribute.
+
+=============================================================================================================================
+
+ Q.)  Explain Difference Between JQuery And JavaScript?
+
+
+                     JavaScript                                                   jQuery                                                 
+
+                                                                            
+ 1.  JavaScript is an independent language and                   1.    jQuery is a JavaScript library.
+      can exist on its own.                                               It would not have been invented had  
+                                                                          JavaScript  was not there. jQuery is
+                                                                          still dependent on JavaScript as it has                                                                                                   
+                                                                          to be converted to JavaScript for the
+                                                                          browser in-built JavaScript engine 
+                                                                          to interpret and run it.
+
+2. Brendan Eich created JavaScript at Netscape.                  2.   jQuery is created by John Resig.
+
+
+3.  JavaScript is a programming language.                        3.  jQuery is an Application Programming 
+                                                                         Interface (API).
+
+4. There are no special symbols to define JavaScript             4.  There are special symbols to define jQuery.
+     like jQuery.
+
+5.  The disadvantage of JavaScript is that it is not             5. The advantage of jQuery is the ease in which   
+     easy to use it.                                                    one can use jQuery.
+
+=============================================================================================================================
+ 
+  
+                                     
+
+                                                                                  
+ 
+                             
